@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vicks Glory Private School | Ikorodu, Nigeria</title>
+    <style>
+        :root {
+            --bg: #f8f5ee;
+            --panel: #ffffff;
+            --primary: #2f6f5a;
+            --primary-dark: #1f4f41;
+            --accent: #f3c76b;
+            --accent-soft: #fff2cb;
+            --text: #183229;
+            --muted: #536b62;
+            --line: rgba(24, 50, 41, 0.12);
+            --shadow: 0 16px 40px rgba(26, 48, 39, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(12px);
+            background: rgba(248, 245, 238, 0.9);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 76px;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .brand-mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--primary), #4b8d75);
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        .brand-name {
+            margin: 0;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .brand-sub {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .main-nav a {
+            transition: color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            color: var(--primary);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            padding: 0.9rem 1.5rem;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        .button.primary {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 14px 30px rgba(47, 111, 90, 0.25);
+        }
+
+        .button.secondary {
+            background: rgba(47, 111, 90, 0.08);
+            color: var(--primary-dark);
+        }
+
+        .hero {
+            padding: 5rem 0 3.5rem;
+            background:
+                radial-gradient(circle at top left, rgba(243, 199, 107, 0.18), transparent 40%),
+                linear-gradient(180deg, rgba(88, 145, 119, 0.06), transparent 35%);
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .eyebrow {
+            margin: 0 0 0.8rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            font-size: 0.76rem;
+        }
+
+        .hero-copy h1,
+        .section-copy h2,
+        .section-heading h2,
+        .admission-box h2 {
+            margin: 0;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.06;
+            letter-spacing: -0.05em;
+        }
+
+        .lead {
+            margin-top: 1.2rem;
+            font-size: 1.08rem;
+            color: var(--muted);
+            max-width: 58ch;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .quick-facts {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .quick-facts li {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .quick-facts strong {
+            font-size: 1rem;
+        }
+
+        .quick-facts span {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg, #ffffff, #f7f3ea);
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            padding: 1.2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: #7b5b07;
+            font-size: 0.78rem;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 0.45rem 0.8rem;
+        }
+
+        .card-visual {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0 1.5rem;
+        }
+
+        .mini-stat {
+            background: linear-gradient(180deg, rgba(47, 111, 90, 0.08), rgba(47, 111, 90, 0.02));
+            border: 1px solid rgba(47, 111, 90, 0.12);
+            border-radius: 18px;
+            padding: 1.1rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .mini-stat span {
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .mini-stat strong {
+            font-size: 1.5rem;
+        }
+
+        .teacher-note {
+            background: #fff;
+            border-radius: 22px;
+            border: 1px solid var(--line);
+            padding: 1.2rem;
+        }
+
+        .teacher-note p {
+            margin: 0 0 1rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .note-byline {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--accent), #f5d98c);
+            color: #4e3a00;
+            font-weight: 800;
+        }
+
+        .note-byline strong,
+        .note-byline span {
+            display: block;
+        }
+
+        .note-byline span {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .stats {
+            padding-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .stats-grid > div {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 1.3rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(29, 65, 53, 0.04);
+        }
+
+        .stats-grid strong {
+            display: block;
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+        }
+
+        .stats-grid span {
+            color: var(--muted);
+        }
+
+        .section {
+            padding: 5.5rem 0;
+        }
+
+        .alt-bg {
+            background: rgba(47, 111, 90, 0.03);
+        }
+
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .section-image {
+            min-height: 470px;
+            border-radius: 28px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow);
+        }
+
+        .image-one {
+            background-image: linear-gradient(rgba(9, 26, 18, 0.18), rgba(9, 26, 18, 0.18)),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Crect fill='%232f6f5a' width='1200' height='600'/%3E%3Cpath fill='%234b8d75' d='M0 400L100 350L200 400L300 350L400 400L500 350L600 400L700 350L800 400L900 350L1000 400L1100 350L1200 400V600H0Z' opacity='0.3'/%3E%3Ccircle cx='600' cy='250' r='80' fill='%23f3c76b' opacity='0.4'/%3E%3Crect x='200' y='200' width='180' height='200' fill='%23fff' opacity='0.1' rx='10'/%3E%3Crect x='800' y='180' width='160' height='220' fill='%23fff' opacity='0.1' rx='10'/%3E%3C/svg%3E");
+        }
+
+        .section-copy h2,
+        .section-heading h2,
+        .admission-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-copy p,
+        .admission-box p,
+        .program-card p,
+        .feature-card p,
+        .testimonial-grid blockquote {
+            color: var(--muted);
+        }
+
+        .check-list {
+            margin-top: 1.5rem;
+            display: grid;
+            gap: 0.8rem;
+            font-weight: 600;
+        }
+
+        .check-list div {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .check-list span {
+            width: 26px;
+            height: 26px;
+            display: inline-grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(47, 111, 90, 0.1);
+            color: var(--primary);
+        }
+
+        .section-heading {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .feature-grid,
+        .program-grid,
+        .testimonial-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .feature-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .feature-card,
+        .program-card,
+        .testimonial-grid blockquote {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 1.6rem;
+            box-shadow: 0 12px 24px rgba(30, 57, 46, 0.05);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card h3,
+        .program-card h3 {
+            margin: 0 0 0.6rem;
+            font-size: 1.3rem;
+        }
+
+        .program-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .program-card {
+            position: relative;
+        }
+
+        .program-tag {
+            display: inline-flex;
+            background: rgba(243, 199, 107, 0.2);
+            color: #7b5b07;
+            border-radius: 999px;
+            padding: 0.4rem 0.7rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        .program-card.highlight {
+            background: linear-gradient(180deg, #1d483f, #2f6f5a);
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .program-card.highlight p,
+        .program-card.highlight .program-tag {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .program-card.highlight .program-tag {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .testimonial-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .testimonial-grid blockquote {
+            margin: 0;
+            font-size: 1.02rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-grid footer {
+            margin-top: 1rem;
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .admission-section {
+            padding-top: 0;
+        }
+
+        .admission-box {
+            background: linear-gradient(135deg, #1a433b, #2d6d5d);
+            color: #fff;
+            border-radius: 32px;
+            padding: 2.2rem;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .admission-box p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .admission-steps {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .admission-steps div {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 600;
+        }
+
+        .admission-steps span {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 255, 255, 0.14);
+            color: #fff;
+        }
+
+        .site-footer {
+            background: #0e221b;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            margin-bottom: 1rem;
+        }
+
+        .site-footer h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .site-footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 920px) {
+            .hero-inner,
+            .split-section,
+            .admission-box,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid,
+            .program-grid,
+            .testimonial-grid,
+            .stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .main-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .quick-facts,
+            .feature-grid,
+            .program-grid,
+            .testimonial-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 3.5rem;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .hero-actions {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <div class="brand" aria-label="Vicks Glory Private School">
+                <div class="brand-mark">VG</div>
+                <div>
+                    <p class="brand-name">Vicks Glory</p>
+                    <span class="brand-sub">Private School</span>
+                </div>
+            </div>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#programs">Programs</a>
+                <a href="#admissions">Admissions</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <a href="#admissions" class="button primary">Enroll Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow">A happy place to learn and grow</p>
+                    <h1>Growing confident, capable learners in a caring community.</h1>
+                    <p class="lead">
+                        Vicks Glory Private School is a warm and welcoming secondary school in Ikorodu, Nigeria, where children are encouraged to thrive academically, socially, and personally.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#admissions" class="button primary">Apply for Admission</a>
+                        <a href="#about" class="button secondary">Learn More</a>
+                    </div>
+
+                    <ul class="quick-facts" aria-label="School highlights">
+                        <li><strong>Small class sizes</strong><span>Individual attention</span></li>
+                        <li><strong>Friendly environment</strong><span>Warm and supportive</span></li>
+                        <li><strong>Secondary school</strong><span>JSS to SS3</span></li>
+                    </ul>
+                </div>
+
+                <div class="hero-card" aria-label="School overview card">
+                    <div class="card-top">
+                        <span class="badge">Community-first</span>
+                    </div>
+                    <div class="card-visual">
+                        <div class="mini-stat">
+                            <span>Students</span>
+                            <strong>&lt;100</strong>
+                        </div>
+                        <div class="mini-stat">
+                            <span>Location</span>
+                            <strong>Ikorodu</strong>
+                        </div>
+                    </div>
+                    <div class="teacher-note">
+                        <p>"We believe every child deserves to feel seen, supported, and inspired to do their best."</p>
+                        <div class="note-byline">
+                            <div class="avatar">VG</div>
+                            <div>
+                                <strong>School Community</strong>
+                                <span>Vicks Glory Private School</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container stats-grid">
+                <div>
+                    <strong>&lt;100</strong>
+                    <span>Students</span>
+                </div>
+                <div>
+                    <strong>Secondary</strong>
+                    <span>Focused learning</span>
+                </div>
+                <div>
+                    <strong>Warm</strong>
+                    <span>Friendly community</span>
+                </div>
+                <div>
+                    <strong>Ikorodu</strong>
+                    <span>Nigeria</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container split-section">
+                <div class="section-image image-one" aria-label="School building illustration"></div>
+                <div class="section-copy">
+                    <p class="eyebrow">About our school</p>
+                    <h2>A school where children feel safe, seen, and supported.</h2>
+                    <p>
+                        At Vicks Glory Private School, we believe that a strong school experience is built on trust, respect, and genuine care. We are not a giant school trying to impress with excess — we are a close-knit, family-oriented community where every child matters.
+                    </p>
+                    <p>
+                        With a small student population and a caring atmosphere, we help students grow in confidence, character, and academic discipline. Our goal is to help each learner discover their strengths and become prepared for the future with honesty, dignity, and purpose.
+                    </p>
+                    <div class="check-list">
+                        <div><span>✓</span> Loving, respectful learning environment</div>
+                        <div><span>✓</span> Strong emphasis on discipline and values</div>
+                        <div><span>✓</span> Encouraging teachers and close relationships</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="section alt-bg">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Why families choose us</p>
+                    <h2>Simple, honest, and deeply caring education.</h2>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="icon">👨‍🏫</div>
+                        <h3>Personal attention</h3>
+                        <p>Our smaller student community allows teachers to notice every child's needs, progress, and personality.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="icon">💛</div>
+                        <h3>Friendly atmosphere</h3>
+                        <p>Students feel comfortable, calm, and happy to learn in an environment built on kindness and respect.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="icon">📚</div>
+                        <h3>Academic focus</h3>
+                        <p>We support solid academic development while helping children become self-motivated and responsible learners.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="icon">🌱</div>
+                        <h3>Character building</h3>
+                        <p>We teach values, humility, integrity, and respect alongside classroom learning.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="icon">🛡️</div>
+                        <h3>Safe environment</h3>
+                        <p>Parents can trust that we place a strong emphasis on the emotional and physical well-being of every student.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="icon">🤝</div>
+                        <h3>Strong community</h3>
+                        <p>We build relationships with families and students that create a true sense of belonging and support.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Programs</p>
+                    <h2>Secondary education with care, structure, and purpose.</h2>
+                </div>
+
+                <div class="program-grid">
+                    <article class="program-card">
+                        <span class="program-tag">JSS</span>
+                        <h3>Junior Secondary</h3>
+                        <p>A strong foundation in core subjects, study habits, and personal growth for students transitioning through early secondary education.</p>
+                    </article>
+
+                    <article class="program-card highlight">
+                        <span class="program-tag">SS</span>
+                        <h3>Senior Secondary</h3>
+                        <p>Focused preparation for external examinations, leadership, and deeper academic understanding for successful future studies.</p>
+                    </article>
+
+                    <article class="program-card">
+                        <span class="program-tag">Values</span>
+                        <h3>Character & discipline</h3>
+                        <p>We guide students to become responsible, respectful, and confident young adults through practical mentorship and positive habits.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonial-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Parent voices</p>
+                    <h2>Families value the warmth and personal care we offer.</h2>
+                </div>
+
+                <div class="testimonial-grid">
+                    <blockquote>
+                        "We wanted a school where our child would be known and not just another face in a crowd. Vicks Glory gave us exactly that."
+                        <footer>— Parent, Ikorodu</footer>
+                    </blockquote>
+
+                    <blockquote>
+                        "The teachers are kind, firm, and genuinely invested in the children. The school feels like a family."
+                        <footer>— Parent, Lagos</footer>
+                    </blockquote>
+
+                    <blockquote>
+                        "It is a school with heart. My child is happy, growing in confidence, and learning with discipline."
+                        <footer>— Parent, Ikorodu</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="admissions" class="section admission-section">
+            <div class="container admission-box">
+                <div>
+                    <p class="eyebrow">Admissions</p>
+                    <h2>Ready to welcome your child into our school community?</h2>
+                    <p>We are open to families looking for a caring, honest school where children can learn and flourish in a supportive environment.</p>
+                </div>
+
+                <div class="admission-steps">
+                    <div><span>1</span> Book a visit</div>
+                    <div><span>2</span> Meet the school team</div>
+                    <div><span>3</span> Complete admission</div>
+                </div>
+
+                <a href="#contact" class="button primary">Speak to Admissions</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="brand footer-brand" aria-label="Vicks Glory Private School">
+                    <div class="brand-mark">VG</div>
+                    <div>
+                        <p class="brand-name">Vicks Glory</p>
+                        <span class="brand-sub">Private School</span>
+                    </div>
+                </div>
+                <p>A cheerful, honest, and community-driven secondary school in Ikorodu, Nigeria, committed to nurturing bright, confident young people.</p>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul>
+                    <li>📍 Ikorodu, Lagos State, Nigeria</li>
+                    <li>📱 +234 810 000 0000</li>
+                    <li>✉️ info@vicksgloryschool.ng</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>School Hours</h3>
+                <ul>
+                    <li>Mon - Fri: 7:30am - 3:00pm</li>
+                    <li>Open for admissions</li>
+                    <li>Warm, family-oriented learning</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2024 Vicks Glory Private School. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
