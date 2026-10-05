@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" role="img" aria-label="Vicks Glory Private School logo">
+  <defs>
+    <linearGradient id="shieldBlue" x1="0" x2="1">
+      <stop offset="0%" stop-color="#2995d2"/>
+      <stop offset="100%" stop-color="#0a7ec3"/>
+    </linearGradient>
+    <linearGradient id="ribbonPink" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f969b4"/>
+      <stop offset="100%" stop-color="#ee4f8d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <path d="M180 70 L1020 70 Q1105 70 1120 155 L1140 855 Q1140 930 1068 930 L132 930 Q60 930 60 855 L80 155 Q95 70 180 70 Z" fill="url(#shieldBlue)"/>
+    <path d="M160 170 L1040 170 Q1080 170 1095 208 L1095 820 Q1095 870 1054 881 L146 881 Q105 870 105 820 L105 208 Q120 170 160 170 Z" fill="#f5f5f5" fill-opacity="0.95"/>
+    <path d="M160 90 L1040 90 Q1112 90 1116 166 L1116 840 Q1116 900 1064 900 L136 900 Q84 900 84 840 L84 166 Q88 90 160 90 Z" fill="none" stroke="#0d5fa8" stroke-width="20"/>
+
+    <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+      <text x="600" y="210" font-size="94" font-weight="900" fill="#ffffff" letter-spacing="10">VICKS</text>
+      <text x="600" y="310" font-size="94" font-weight="900" fill="#ffffff" letter-spacing="10">GLORY</text>
+    </g>
+
+    <g transform="translate(600 480)">
+      <path d="M-260 -60 L260 -60 L180 220 L-180 220 Z" fill="#0c0c0c"/>
+      <path d="M-160 8 L160 8 L110 160 L-110 160 Z" fill="#0b0b0b" opacity="0.98"/>
+      <path d="M-155 30 Q0 110 155 30" fill="none" stroke="#2c2c2c" stroke-width="7"/>
+      <path d="M0 -180 L95 -110 L0 80 L-95 -110 Z" fill="#0b0b0b"/>
+      <path d="M0 -204 L110 -120 L0 105 L-110 -120 Z" fill="#141414"/>
+      <path d="M-36 -130 L36 -130 L42 -90 L-42 -90 Z" fill="#e6b445"/>
+      <path d="M-25 -80 L25 -80 L20 35 L-20 35 Z" fill="#e6b445"/>
+      <path d="M-60 52 L60 52 L50 60 L-50 60 Z" fill="#0d0d0d"/>
+      <path d="M-70 52 L70 52 L80 82 L-80 82 Z" fill="#111111"/>
+      <path d="M-110 90 L110 90 L120 120 L-120 120 Z" fill="#121212"/>
+      <path d="M-140 120 L140 120 L140 160 L-140 160 Z" fill="#151515"/>
+      <path d="M0 -214 L14 -180 L0 -10 L-14 -180 Z" fill="#f3d7a5" opacity="0.9"/>
+      <path d="M0 -180 L44 -130 L0 -90 L-44 -130 Z" fill="#f3d7a5" opacity="0.8"/>
+    </g>
+
+    <g transform="translate(600 510)">
+      <g fill="none" stroke="#0f3c8a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-240 110 Q-120 30 0 95 Q130 60 240 120"/>
+        <path d="M-249 132 Q-130 60 0 118 Q130 88 249 138"/>
+        <path d="M-230 94 Q-170 40 -90 110"/>
+        <path d="M230 94 Q170 40 90 110"/>
+      </g>
+      <g fill="#0b2f7f" stroke="#0b2f7f" stroke-width="5">
+        <path d="M-105 165 L-85 100 L-55 165 Z"/>
+        <path d="M-65 165 L-45 110 L-15 165 Z"/>
+        <path d="M-30 165 L-10 96 L20 165 Z"/>
+        <path d="M10 165 L30 105 L60 165 Z"/>
+        <path d="M48 165 L70 120 L98 165 Z"/>
+      </g>
+      <path d="M-190 165 Q-80 134 -7 173 Q90 132 190 164" fill="none" stroke="#0b2f7f" stroke-width="8"/>
+      <path d="M-310 140 Q-215 132 -155 170" fill="none" stroke="#0b2f7f" stroke-width="8"/>
+      <path d="M310 140 Q215 132 155 170" fill="none" stroke="#0b2f7f" stroke-width="8"/>
+      <g stroke="#0b2f7f" stroke-width="7" stroke-linecap="round">
+        <path d="M-95 150 Q-42 188 -7 151"/>
+        <path d="M-30 150 Q25 198 75 145"/>
+      </g>
+      <g fill="#0b2f7f">
+        <path d="M0 60 Q55 34 80 80 L73 112 Q38 91 0 95 Z"/>
+      </g>
+      <path d="M0 65 C28 85 40 105 1 120 C-30 104 -18 78 0 65 Z" fill="#f3d7a5"/>
+      <path d="M-230 164 Q-150 200 -40 187 Q80 194 155 170" fill="none" stroke="#0b2f7f" stroke-width="7"/>
+    </g>
+
+    <g font-family="Arial, Helvetica, sans-serif" font-weight="900">
+      <text x="600" y="760" font-size="58" fill="#ffffff" text-anchor="middle">PRIVATE SCHOOL</text>
+    </g>
+
+    <g transform="translate(0 0)">
+      <path d="M120 890 Q250 810 385 890 L815 890 Q950 810 1080 890 L1080 975 L120 975 Z" fill="url(#ribbonPink)"/>
+      <path d="M120 890 Q250 810 385 890" fill="none" stroke="#b3164d" stroke-width="14"/>
+      <path d="M815 890 Q950 810 1080 890" fill="none" stroke="#b3164d" stroke-width="14"/>
+      <g font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900" fill="#ffffff" text-anchor="middle">
+        <text x="600" y="940">Motto: Victorious Children, Glorious Future</text>
+      </g>
+    </g>
+  </g>
+</svg>
